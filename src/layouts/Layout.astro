@@ -3,20 +3,47 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="icon" type="image/svg+xml" href="/tebit.svg" />
+		<title>Teibit 2025</title>
+		<meta name="description" content="Teibit 2025" />
+		<meta name="keywords" content="Teibit 2025, Teibit, 2025, Teibit 2025, Teibit 2025, Teibit 2025" />
+		<meta name="author" content="Victor De Jesus" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="bingbot" content="index, follow" />
+		<meta name="yandexbot" content="index, follow" />
 	</head>
 	<body>
-		<slot />
+		<div id="background-mask" class="fixed inset-0 w-full h-full"></div>
+		<div class="relative z-10">
+			<slot />
+		</div>
 	</body>
 </html>
 
-<style>
+<style is:global>
+	@import "tailwindcss";
+
+	body {
+		background: rgb(0, 0, 0);
+	}
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	#background-mask {
+		background-image: url(/fondo.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: crisp-edges;
+		-webkit-backface-visibility: hidden;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
 	}
 </style>
